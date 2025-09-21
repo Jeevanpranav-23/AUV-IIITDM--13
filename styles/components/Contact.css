@@ -1,0 +1,232 @@
+/* only for map image */
+#contact img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 717px) {
+  #contact img {
+    height: 15rem;
+  }
+}
+
+.contact {
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--spacing-xl) 0;
+  /* Changed to black background */
+  background: #000000;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.map-container {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Adjusted shadow for dark theme */
+}
+
+.map-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* Contact details card */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  /* Changed background to dark gray */
+  background: #1f2937;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  /* Changed border to a darker gray */
+  border: 1px solid #374151;
+}
+
+.email-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.1rem;
+  /* Changed color to a light blue */
+  color: #60a5fa;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  /* Lighter blue on hover */
+  color: #93c5fd;
+}
+
+.email-link i {
+  /* Matched icon color */
+  color: #60a5fa;
+  font-size: 1.2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Dark gray background for icons */
+  background: #374151;
+  border-radius: var(--radius-full);
+  transition: all 0.3s ease;
+  /* Light gray icons */
+  color: #d1d5db;
+}
+
+.social-links a:hover {
+  /* Light blue background on hover */
+  background: #60a5fa;
+  /* Dark icon color on hover for contrast */
+  color: #1f2937;
+  transform: translateY(-3px);
+}
+
+.social-links i {
+  font-size: 1.2rem;
+}
+
+/* Contact form */
+.contact-form-container {
+  position: relative;
+  /* Dark gray background */
+  background: #1f2937;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  /* Darker border */
+  border: 1px solid #374151;
+}
+
+/* Made loading overlay more specific to avoid conflicts */
+.contact-form-container .loading-overlay {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Kept the blue overlay, it works well */
+  background: rgba(30, 64, 175, 0.9) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  z-index: 10;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-header h3 {
+  /* Light blue header text */
+  color: #60a5fa;
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.form-header p {
+  /* Light gray paragraph text */
+  color: #d1d5db;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-input {
+  width: 100%;
+  /* Dark input background */
+  background: #374151;
+  /* Darker border */
+  border: 1px solid #4b5563;
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  /* Light gray text */
+  color: #d1d5db;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  /* Light blue border on focus */
+  border-color: #60a5fa;
+  background: #4b5563; /* Slightly lighter background on focus */
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Added more specific selector for submit button to override any global styles */
+.contact-form-container .submit-button {
+  width: 100%;
+  /* Using a brighter blue for the button */
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: var(--radius-md);
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form-container .submit-button:hover {
+  /* Lighter blue on hover */
+  background: #60a5fa !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .map-image {
+    height: 200px;
+  }
+
+  .contact-form-container {
+    padding: var(--spacing-md);
+  }
+
+  .form-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
